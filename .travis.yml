@@ -1,0 +1,32 @@
+# travis 的配置文件，travis 是一种可持续集成(CI)工具，代码提交后自动构建
+language: java
+jdk:
+  - openjdk8
+
+notifications:
+  email:
+    recipients:
+      - 3492359146@qq.com
+      - 1244166350@qq.com
+    on_success: always
+    on_failure: always
+
+before_script:
+  - echo "MAVEN_OPTS='-Xms1024m -Xmx3072m -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=384m'" > ~/.mavenrc
+
+# 测试结果展示平台，将测试结果可视化
+before_install:
+  - pip install --user codecov
+
+after_success:
+  - mvn clean test jacoco:report coveralls:report
+  - codecov
+  - bash <(curl -s https://codecov.io/bash)
+
+branches:
+  only:
+    - master
+
+cache:
+  directories:
+    - $HOME/.m2
