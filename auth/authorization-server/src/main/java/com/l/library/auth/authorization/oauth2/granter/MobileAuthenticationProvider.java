@@ -4,7 +4,7 @@ import org.springframework.security.authentication.dao.DaoAuthenticationProvider
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 /**
- * 手机验证码登入
+ * 手机验证码登陆provider
  */
 public class MobileAuthenticationProvider extends DaoAuthenticationProvider {
 

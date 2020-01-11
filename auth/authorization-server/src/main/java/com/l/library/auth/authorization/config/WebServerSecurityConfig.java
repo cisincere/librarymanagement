@@ -1,6 +1,5 @@
 package com.l.library.auth.authorization.config;
 
-import com.l.library.auth.authorization.oauth2.granter.MobileAuthenticationProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -14,9 +13,15 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import com.springboot.auth.authorization.oauth2.granter.MobileAuthenticationProvider;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Configuration
 @EnableWebSecurity
 public class WebServerSecurityConfig extends WebSecurityConfigurerAdapter {
+
     @Autowired
     @Qualifier("userDetailsService")
     private UserDetailsService userDetailsService;

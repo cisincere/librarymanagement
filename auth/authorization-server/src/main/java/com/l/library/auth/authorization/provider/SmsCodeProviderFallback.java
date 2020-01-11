@@ -1,4 +1,4 @@
-package com.l.library.auth.authorization.provider;
+package com.springboot.auth.authorization.provider;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class SmsCodeProviderFallback implements SmsCodeProvider {
+
     @Autowired
     PasswordEncoder passwordEncoder;
 

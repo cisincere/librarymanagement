@@ -7,5 +7,7 @@ import java.util.Set;
 
 @Service
 public interface IRoleService {
+
     Set<Role> queryUserRolesByUserId(String userId);
+
 }

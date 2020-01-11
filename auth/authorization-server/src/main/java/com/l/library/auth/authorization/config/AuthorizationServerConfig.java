@@ -1,9 +1,9 @@
 package com.l.library.auth.authorization.config;
 
 import com.google.common.collect.Lists;
-import com.l.library.auth.authorization.exception.CustomWebResponseExceptionTranslator;
-import com.l.library.auth.authorization.oauth2.enhancer.CustomTokenEnhancer;
-import com.l.library.auth.authorization.oauth2.granter.MobileTokenGranter;
+import com.springboot.auth.authorization.oauth2.enhancer.CustomTokenEnhancer;
+import com.springboot.auth.authorization.exception.CustomWebResponseExceptionTranslator;
+import com.springboot.auth.authorization.oauth2.granter.MobileTokenGranter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -32,6 +32,7 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 import javax.sql.DataSource;
 import java.util.Arrays;
 import java.util.List;
+
 @Configuration
 @EnableAuthorizationServer
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
@@ -164,4 +165,5 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 endpoints.getOAuth2RequestFactory()));
         return new CompositeTokenGranter(granters);
     }
+
 }

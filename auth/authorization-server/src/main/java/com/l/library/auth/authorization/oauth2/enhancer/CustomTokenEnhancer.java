@@ -9,9 +9,10 @@ import org.springframework.security.oauth2.provider.token.TokenEnhancer;
 import java.util.Map;
 
 /**
- * 只定义token信息
+ * 自定义token携带内容
  */
 public class CustomTokenEnhancer implements TokenEnhancer {
+
     @Override
     public OAuth2AccessToken enhance(OAuth2AccessToken accessToken, OAuth2Authentication authentication) {
         Map<String, Object> additionalInfo = Maps.newHashMap();
