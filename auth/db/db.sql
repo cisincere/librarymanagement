@@ -1,8 +1,8 @@
 SET NAMES utf8;
 
-DROP DATABASE IF EXISTS l_auth;
-CREATE DATABASE l_auth DEFAULT CHARSET utf8mb4;
-USE l_auth;
+DROP DATABASE IF EXISTS sc_auth;
+CREATE DATABASE sc_auth DEFAULT CHARSET utf8mb4;
+USE sc_auth;
 
 -- access_token存储表
 DROP TABLE IF EXISTS oauth_access_token;

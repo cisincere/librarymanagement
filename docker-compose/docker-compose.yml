@@ -2,24 +2,24 @@ version: '3'
 services:
   redis:
     image: redis:alpine
-    container_name: l-redis
+    container_name: sc-redis
     restart: always
     volumes:
       - ../data/redis:/data
     networks:
-      - l-net
+      - sc-net
     ports:
       - 6379:6379
     env_file: .env
 
   rabbitmq:
     image: rabbitmq:management-alpine
-    container_name: l-rabbitmq
+    container_name: sc-rabbitmq
     restart: always
     volumes:
       - ../data/rabbitmq:/var/lib/rabbitmq/mnesia
     networks:
-      - l-net
+      - sc-net
     ports:
       - 5672:5672
       - 15672:15672
@@ -27,10 +27,10 @@ services:
 
   mysql:
     image: mysql:5.7
-    container_name: l-msql
+    container_name: sc-msql
     restart: always
     networks:
-      - l-net
+      - sc-net
     ports:
       - 3306:3306
     volumes:
