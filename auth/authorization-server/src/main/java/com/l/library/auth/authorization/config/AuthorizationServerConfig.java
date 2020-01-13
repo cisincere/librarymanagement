@@ -1,9 +1,9 @@
 package com.l.library.auth.authorization.config;
 
 import com.google.common.collect.Lists;
-import com.springboot.auth.authorization.oauth2.enhancer.CustomTokenEnhancer;
-import com.springboot.auth.authorization.exception.CustomWebResponseExceptionTranslator;
-import com.springboot.auth.authorization.oauth2.granter.MobileTokenGranter;
+import com.l.library.auth.authorization.exception.CustomWebResponseExceptionTranslator;
+import com.l.library.auth.authorization.oauth2.enhancer.CustomTokenEnhancer;
+import com.l.library.auth.authorization.oauth2.granter.MobileTokenGranter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;

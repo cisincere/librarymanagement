@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Set;
 
+// feign 服务内部的接口调用调用 name:服务名称 fallback:失败回调的类(该类中写失败回调的方法)
 @FeignClient(name = "organization", fallback = OrganizationProviderFallback.class)
 public interface OrganizationProvider {
 
