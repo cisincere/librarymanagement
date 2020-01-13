@@ -6,11 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="core" />
-        <module name="authorization-server" />
-        <module name="authentication-server" />
         <module name="web" />
+        <module name="authorization-server" />
         <module name="authentication-client" />
+        <module name="core" />
+        <module name="authentication-server" />
+        <module name="webapp-parent" />
+        <module name="organization" />
       </profile>
     </annotationProcessing>
   </component>

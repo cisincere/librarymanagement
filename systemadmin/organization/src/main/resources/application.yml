@@ -1,0 +1,123 @@
+spring:
+  cloud:
+    bus:
+      trace:
+        enabled: true
+  rabbitmq:
+    host: ${RABBIT_MQ_HOST:localhost}
+    port: ${RABBIT_MQ_PORT:5673}
+    username: ${RABBIT_MQ_USERNAME:guest}
+    password: ${RABBIT_MQ_PASSWORD:guest}
+  redis:
+    host: ${REDIS_HOST:localhost}
+    port: ${REDIS_PORT:6379}
+    lettuce:
+      pool:
+        max-active: 300
+    # password: ${REDIS_PASSWORD:****}
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: ${DATASOURCE_USERNAME:root}
+    password: ${DATASOURCE_PASSWORD:root123}
+    url: jdbc:${DATASOURCE_DBTYPE:mysql}://${DATASOURCE_HOST:localhost}:${DATASOURCE_PORT:3306}/sc_admin?characterEncoding=UTF-8&useUnicode=true&useSSL=false
+  zipkin:
+    enabled: true
+    sender:
+      type: rabbit
+  sleuth:
+    sampler:
+      probability: 1.0
+
+  mvc:
+    throw-exception-if-no-handler-found: true
+  servlet:
+    multipart:
+      max-file-size: "2MB"
+      max-request-size: "2MB"
+  jackson:
+    time-zone: GMT+8
+
+jetcache:
+  statIntervalMinutes: 15 # #指定统计间隔，以分钟为单位。0表示没有统计数据。
+  areaInCacheName: false
+  hidePackages: org.l #包名称以（hiddenPackages）开始的将在生成的缓存
+  local:
+    # 默认2小时本地缓存
+    default:
+      type: caffeine # 后端缓存系统的类型。远程缓存:tair，redis，本地缓存:linkedhashmap，caffeine。
+      keyConvertor: fastjson
+      expireAfterWriteInMillis: 3600000  #写入的全局配置到期时间，以毫秒为单位
+      expireAfterAccessInMillis: 1800000 #读取的全局配置到期时间，以毫秒为单位
+    # 长时本地缓存，主要用于要求时效一般
+    longTime:
+      type: caffeine
+      keyConvertor: fastjson
+      expireAfterWriteInMillis: 300000
+      expireAfterAccessInMillis: 180000
+    # 短时本地缓存，主要用于要求失效较高的配置
+    shortTime:
+      type: caffeine
+      keyConvertor: fastjson
+      expireAfterWriteInMillis: 60000
+      expireAfterAccessInMillis: 40000
+  remote:
+    # 默认2小时的远程缓存
+    default:
+      type: redis
+      expireAfterWriteInMillis: 43200000
+      keyConvertor: fastjson
+      valueEncoder: kryo  #全局配置值编码器只需要远程缓存。两个内置valueEncoder是java和kryo
+      valueDecoder: kryo  #全局配置值解码器只需要远程缓存。两个内置valueEncoder是java和kryo
+      poolConfig:
+        minIdle: 5
+        maxIdle: 20
+        maxTotal: 50
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+    # 长时远程緩存，主要用于要求时效要求一般的集中式缓存
+    longTime:
+      type: redis
+      expireAfterWriteInMillis: 7200000
+      keyConvertor: fastjson
+      valueEncoder: kryo
+      valueDecoder: kryo
+      poolConfig:
+        minIdle: 5
+        maxIdle: 20
+        maxTotal: 50
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+    # 短时远程缓存，主要用于要求失效较高的集中缓存
+    shortTime:
+      type: redis
+      expireAfterWriteInMillis: 300000
+      keyConvertor: fastjson
+      valueEncoder: kryo
+      valueDecoder: kryo
+      poolConfig:
+        minIdle: 5
+        maxIdle: 20
+        maxTotal: 50
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+
+# 加载所有的端点/默认只加载了 info / health
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+logging:
+  level:
+    com.l.library: debug
+    java.sql.PreparedStatement: debug
+  path: logs/
+  file:
+    max-size: 1GB
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      logic-delete-value: "Y" # 逻辑已删除值(默认为 Y)
+      logic-not-delete-value: "N" # 逻辑未删除值(默认为 N)
