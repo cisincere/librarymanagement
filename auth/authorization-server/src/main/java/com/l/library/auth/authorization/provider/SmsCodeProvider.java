@@ -1,4 +1,4 @@
-package com.springboot.auth.authorization.provider;
+package com.l.library.auth.authorization.provider;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

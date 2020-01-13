@@ -11,6 +11,7 @@ import java.sql.Date;
 import java.time.ZonedDateTime;
 
 @Slf4j
+// mybatisplus自定义填充公共字段 ,即没有传的字段自动填充
 public class PoMetaObjectHandler implements MetaObjectHandler {
     private String getCurrentUsername(){
         return StringUtils.defaultIfBlank(UserContextHolder.getInstance().getUsername(), BasePo.DEFAULT_USERNAME);

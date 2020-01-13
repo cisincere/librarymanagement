@@ -1,8 +1,8 @@
 package com.l.library.auth.authorization.oauth2;
 
 import com.l.library.auth.authorization.entity.User;
+import com.l.library.auth.authorization.provider.SmsCodeProvider;
 import com.l.library.auth.authorization.service.IUserService;
-import com.springboot.auth.authorization.provider.SmsCodeProvider;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
