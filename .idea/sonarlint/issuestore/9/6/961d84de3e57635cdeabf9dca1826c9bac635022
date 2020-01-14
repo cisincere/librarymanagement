@@ -1,0 +1,6 @@
+
+Lsquid:S1191	"5Use classes from the Java API instead of Sun classes.(ö„ª∆
+nsquid:UselessImportCheck"JRemove this unused import 'springfox.documentation.spi.DocumentationType'.(…Í…•
+rsquid:UselessImportCheck"NRemove this unused import 'springfox.documentation.spring.web.plugins.Docket'.(áÈ‘Â
+lsquid:UselessImportCheck"HRemove this unused import 'org.springframework.context.annotation.Bean'.(ÇÓâﬁ
+]squid:UselessImportCheck	"9Remove this unused import 'sun.plugin.dom.core.Document'.(ö„ª∆

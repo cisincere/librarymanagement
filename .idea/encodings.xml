@@ -11,6 +11,9 @@
     <file url="file://$PROJECT_DIR$/common/core/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common/web/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common/web/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gateway/gateway-admin/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gateway/gateway-web/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gateway/gateway-web/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/systemadmin/organization/src/main/resources" charset="UTF-8" />
   </component>
 </project>
