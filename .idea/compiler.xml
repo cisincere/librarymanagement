@@ -6,15 +6,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="web" />
+        <module name="consumer-feign" />
+        <module name="admin" />
+        <module name="bus" />
+        <module name="authentication-client" />
+        <module name="organization" />
+        <module name="producer-jpa" />
         <module name="authorization-server" />
         <module name="gateway-web" />
-        <module name="core" />
+        <module name="consumer-ribbon" />
         <module name="authentication-server" />
+        <module name="core" />
         <module name="gateway-admin" />
-        <module name="authentication-client" />
-        <module name="webapp-parent" />
-        <module name="organization" />
+        <module name="web" />
+        <module name="producer" />
       </profile>
     </annotationProcessing>
   </component>

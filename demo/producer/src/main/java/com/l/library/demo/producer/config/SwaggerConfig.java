@@ -18,7 +18,7 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.springboot.cloud.demos.producer"))
+                .apis(RequestHandlerSelectors.basePackage("com.l.library"))
                 .paths(PathSelectors.any())
                 .build();
     }
@@ -27,7 +27,7 @@ public class SwaggerConfig {
         return new ApiInfoBuilder()
                 .title("Spring Boot中使用Swagger2构建RESTful APIs")
                 .description("更多Spring Boot API")
-                .termsOfServiceUrl("https://github.com/zhoutaoo/SpringCloud")
+                .termsOfServiceUrl("https://github.com/cisincere/librarymanagement")
                 .version("2.0")
                 .build();
     }
