@@ -1,8 +1,0 @@
-com\l\library\manangement\common\core\exception\BaseException.class
-com\l\library\manangement\common\core\util\UserContextHolder$1.class
-com\l\library\manangement\common\core\entity\vo\Result.class
-com\l\library\manangement\common\core\exception\SystemErrorType.class
-com\l\library\manangement\common\core\util\UserContextHolder$SingletonHolder.class
-com\l\library\manangement\common\core\exception\ServiceException.class
-com\l\library\manangement\common\core\exception\ErrorType.class
-com\l\library\manangement\common\core\util\UserContextHolder.class

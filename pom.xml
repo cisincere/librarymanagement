@@ -1,24 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.l</groupId>
     <artifactId>librarymanagement</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>librarymanagement</name>
-    <description>library management</description>
+
+    <name>cloud</name>
+    <description>Demo project for Spring Cloud</description>
+
     <modules>
         <module>auth</module>
+        <module>center</module>
         <module>common</module>
-        <module>systemadmin</module>
-        <module>wabapps</module>
         <module>gateway</module>
+        <module>webapps</module>
+        <module>monitor</module>
+        <module>systemadmin</module>
+        <module>demo</module>
     </modules>
+
     <dependencyManagement>
         <dependencies>
+            <!--支持Spring Boot 2.1.X-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
@@ -40,7 +46,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <!--Swagger2 RESTful API文档-->
+            <!--Swagger2 - RESTful API文档-->
             <dependency>
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger2</artifactId>
@@ -51,18 +57,7 @@
                 <artifactId>springfox-swagger-ui</artifactId>
                 <version>2.9.2</version>
             </dependency>
-             <!--For input string: ""-->
-            <dependency>
-                <groupId>io.swagger</groupId>
-                <artifactId>swagger-annotations</artifactId>
-                <version>1.5.21</version>
-            </dependency>
-            <dependency>
-                <groupId>io.swagger</groupId>
-                <artifactId>swagger-models</artifactId>
-                <version>1.5.21</version>
-            </dependency>
-            <!--jetcache缓存-->
+            <!--jetcache缓存 -->
             <dependency>
                 <groupId>com.alicp.jetcache</groupId>
                 <artifactId>jetcache-starter-redis</artifactId>
@@ -70,16 +65,29 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
     <repositories>
         <repository>
             <id>spring-milestones</id>
             <name>Spring Milestones</name>
-            <url>>https://repo.spring.io/libs-milestone</url>
+            <url>https://repo.spring.io/libs-milestone</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
         </repository>
+        <repository>
+            <id>sonatype-nexus-snapshots</id>
+            <name>Sonatype Nexus Snapshots</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </repository>
     </repositories>
+
     <pluginRepositories>
         <pluginRepository>
             <id>repository.spring.release</id>
@@ -124,12 +132,12 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-alibaba-nacos-config</artifactId>
         </dependency>
-        <!--熔断降级 使用 sentinel 替代 hystrix-->
+        <!--熔断降级-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
         </dependency>
-        <!--日志追踪-->
+        <!--日志跟踪-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-zipkin</artifactId>
@@ -146,7 +154,7 @@
             <scope>runtime</scope>
             <optional>true</optional>
         </dependency>
-        <!--lombok插件-->
+        <!--使用 lombok 简化 Java 代码-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -184,5 +192,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

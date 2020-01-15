@@ -6,8 +6,8 @@
     <parent>
         <artifactId>webapp-parent</artifactId>
         <groupId>org.l</groupId>
-        <version>1.0-SNAPSHOT</version>
-        <relativePath>../wabapps/webapp-parent/pom.xml</relativePath>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../webapps/webapp-parent/pom.xml</relativePath>
     </parent>
 
     <artifactId>systemadmin</artifactId>

@@ -1,0 +1,9 @@
+# 提供远程访问
+http.host: 0.0.0.0
+http.cors.enabled: true
+# 提供跨域支持
+http.cors.allow-origin: "*"
+# Uncomment the following lines for a production cluster deployment
+#transport.host: 0.0.0.0
+#discovery.zen.minimum_master_nodes: 1
+transport.host: 0.0.0.0

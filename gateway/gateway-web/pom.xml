@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.l</groupId>
         <artifactId>gateway</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
 
     <artifactId>gateway-web</artifactId>
@@ -44,7 +44,7 @@
         <dependency>
             <groupId>org.l</groupId>
             <artifactId>authentication-client</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
